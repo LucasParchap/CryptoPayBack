@@ -16,19 +16,7 @@ log.*
 # Environment Variables
 .env
 
-# Database
-*.sqlite
-*.sqlite3
-*.db
-*.db-journal
-postgres-data/
 
-# Docker
-docker-compose.override.yml
-.dockerignore
-**/Dockerfile
-**/docker-compose.yml
-**/.docker
 
 # Operating System Files
 .DS_Store
