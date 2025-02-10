@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 const authRoutes = require("./auth");
+const convertRoutes = require("./cryptoConversion");
 require("dotenv").config();
 
 
@@ -24,6 +25,7 @@ const authenticateToken = (req, res, next) => {
 };
 
 router.use("/auth", authRoutes);
+router.use("/crypto", convertRoutes);
 
 router.get("/", authenticateToken, (req, res) => {
     res.json({ message: `Bienvenue sur l'API, utilisateur ID: ${req.user.userId}` });
