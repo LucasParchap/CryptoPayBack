@@ -13,7 +13,6 @@ router.post("/convert-fiat", async (req, res) => {
             return res.status(400).json({ error: "Montant invalide. Veuillez fournir un montant numérique positif." });
         }
 
-        // Récupérer le taux de conversion EUR -> ETH depuis l'API CoinGecko
         const response = await axios.get("https://api.coingecko.com/api/v3/simple/price", {
             params: {
                 ids: "ethereum",
